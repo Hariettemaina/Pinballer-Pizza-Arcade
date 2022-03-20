@@ -6,3 +6,17 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
 }
+*{
+    box-sizing: border-box;
+}
+
+
+
+
+
+
+
+
+*{
+    font-family: 'Fira Sans Condensed', sans-serif;
+}
