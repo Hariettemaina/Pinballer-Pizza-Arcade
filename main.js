@@ -48,3 +48,38 @@ let pickPizzaAction = (pizzaName) => {
     })
     
 }
+
+
+let crustPickAction = (crust,price)=>{
+    currentCrust=crust
+    currentCrustPrice=price
+      
+
+}
+
+$(document).ready(function(){
+    $('select').on('change', function(e){
+         
+        
+        let pizzaSizeValue=this.value
+        if(pizzaSizeValue !=='small'){
+            if(this.value === 'medium'){
+                currentSize ='medium'
+                currentSizePrice = 10
+                
+                
+            }else{
+                currentSize ='large'
+                currentSizePrice = 15
+            }
+                
+        }else{
+            currentSize ='small'
+            currentSizePrice = 5
+            
+           
+        }
+        
+      });
+    
+})
