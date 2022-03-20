@@ -83,3 +83,28 @@ $(document).ready(function(){
       });
     
 })
+
+let selectTopping = (topping)=>{
+    if(currentPizzaToppings.length>0){
+        if(currentPizzaToppings.includes(topping.name) === false){
+            currentPizzaToppings.push(topping.name) 
+            currentToppingsPrice=currentToppingsPrice+5
+        }else{
+            const index = currentPizzaToppings.indexOf(topping.name);
+            if (index > -1) {
+                currentPizzaToppings.splice(index, 1); 
+            }
+            currentToppingsPrice=currentToppingsPrice-5
+            
+        }
+
+    }else{
+        currentPizzaToppings.push(topping.name)
+        currentToppingsPrice=currentToppingsPrice+5
+    }
+    
+   
+    
+    
+    
+}
