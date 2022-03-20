@@ -108,3 +108,21 @@ let selectTopping = (topping)=>{
     
     
 }
+
+let optInDelivery =(state)=>{
+    $(document).ready(function(){
+        if(state){
+            $('#deliveryNote').show()  
+            deliveryOptedInFee = 10
+
+
+        }else{
+            $('#deliveryNote').hide()
+
+        }
+        
+        
+        
+    })
+
+}
