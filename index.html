@@ -212,5 +212,82 @@
                     <span style="float: right">5$</span>
                   </div>
                   <div>
+                    <p>How many pizza do u want</p>
+                    <input
+                      class="form-control"
+                      id="number"
+                      min="1"
+                      type="number"
+                      value="1"
+                      onchange="pizzaQuantitySelect(value)"
+                    />
+                  </div>
+
+                  <div style="margin-bottom: 1rem">
+                    <p>Do you want Delivery</p>
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="flexRadioDefault"
+                        id="flexRadioDefault1"
+                        onclick="optInDelivery(true)"
+                      />
+                      <label class="form-check-label" for="flexRadioDefault3">
+                        Yes
+                      </label>
+                      <span style="float: right">fee: 10$</span>
+                    </div>
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="flexRadioDefault"
+                        id="flexRadioDefault2"
+                        checked
+                        onclick="optInDelivery(false)"
+                      />
+                      <label class="form-check-label" for="flexRadioDefault3">
+                        No
+                      </label>
+                      <div id="deliveryNote">
+                        <label
+                          for="exampleFormControlTextarea1"
+                          class="form-label"
+                          >Delivery instructions</label
+                        >
+                        <div class="alert alert-primary" role="alert">
+                          Your order will be delivered to your location
+                        </div>
+                        <textarea class="form-control" rows="2"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    onclick="Checkout()"
+                  >
+                    Checkout
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="orderList" class="col-lg-4 col-md-8 col-sm-4">
+            <div class="card" style="margin-top: 3rem">
+              <div class="card-body">
+                <h5 class="card-title">Your current Orders</h5>
+                <p class="card-text" id="myPizzas"></p>
+                <p>
+                  Total Price:
+                  <span id="totalPrice"></span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 </body>
 </html>
