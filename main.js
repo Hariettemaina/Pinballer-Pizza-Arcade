@@ -126,3 +126,24 @@ let optInDelivery =(state)=>{
     })
 
 }
+
+let pizzaQuantitySelect = (value)=>{
+    pizzaQuantity = value
+
+}
+let Checkout = ()=>{
+    let name = currentPizzaName
+    let size = currentSize
+    let sizePrice = Number(currentSizePrice)
+    let crust = currentCrust
+    let crustPrice = Number(currentCrustPrice)
+    let toppings = currentPizzaToppings
+    let toppingsPrice = Number(currentToppingsPrice)
+    let quantity =pizzaQuantity
+    let delivery = deliveryOption
+    let deliveryFee = Number(deliveryOptedInFee)
+    let newPizzaOrder = new Pizza(name,size,sizePrice,crust,crustPrice,toppings,toppingsPrice,delivery,deliveryFee,quantity)
+    pizzaOrders.push(newPizzaOrder)
+    computeFinalPrice()
+    
+}
