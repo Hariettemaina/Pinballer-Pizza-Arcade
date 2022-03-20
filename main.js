@@ -147,3 +147,38 @@ let Checkout = ()=>{
     computeFinalPrice()
     
 }
+
+let computeFinalPrice = ()=>{
+    currentPizzasPrice =0
+    pizzaOrders.forEach(pizza=>{
+        let currentpizzaPrice =  pizza.sizePrice
+        currentpizzaPrice=currentpizzaPrice+pizza.crustPrice
+        currentpizzaPrice=currentpizzaPrice+pizza.toppingsPrice
+        currentpizzaPrice = currentpizzaPrice*pizza.quantity
+        currentpizzaPrice = currentpizzaPrice+pizza.deliveryFee
+        currentPizzasPrice=currentPizzasPrice+ currentpizzaPrice
+        
+        
+
+
+        
+    })
+    console.log(pizzaOrders)
+    $(document).ready(function(){
+    $('#pizzaList').show()
+    $('#toppings').hide()
+    })
+    
+    showData()
+
+
+}
+let showData =()=>{
+    let myPizzas = document.getElementById('myPizzas')
+    myPizzas = pizzaOrders
+    let orderPrice = document.getElementById('totalPrice')
+    
+    orderPrice.innerText=currentPizzasPrice
+    document.getElementById("myPizzas").innerHTML = JSON.stringify(pizzaOrders, null, 2);
+
+}
